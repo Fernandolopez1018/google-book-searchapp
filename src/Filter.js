@@ -4,9 +4,17 @@ import apiKey from './apiKey'
 
 class Filter extends React.Component {
   printType = (type) => {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.props.query}&printType=${type}&key=${apiKey}`)
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${this.props.query}&maxResults=10&printType=${type}&key=${apiKey}`;
+    fetch(url)
     .then(res => res.json())
-    .then(arr => console.log('', arr));
+    .then(arr => this.props.update(arr.items));
+  }
+
+  bookType = (type) => {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${this.props.query}&maxResults=10&filter=${type}&key=${apiKey}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(arr => this.props.update(arr.items, url));
   }
 
   render() {
@@ -25,8 +33,16 @@ class Filter extends React.Component {
         </div>
         <div className='book-type'>
           <label>Book Type:</label>
-          <select defaultValue='no-filter'>
-            <option value='no-filter' disabled>No Filter</option>
+          <select
+            defaultValue=''
+            onChange={(e) => this.bookType(e.target.value)}
+          >
+            <option value='' >No Filter</option>
+            <option value='partial' >Previewable</option>
+            <option value='full' >Full text</option>
+            <option value='free-ebooks' >Free-Ebooks</option>
+            <option value='paid-ebooks' >Paid E-books</option>
+            <option value='ebooks' >E-books</option>
           </select>
         </div>
       </div>

@@ -3,13 +3,14 @@ import Header from './Header'
 import Search from './Search'
 import Filter from './Filter'
 import BookList from './BookList'
+import Controls from './Controls'
 import './App.css'
 
 class App extends React.Component {
-  state = {query: '', books: []}
+  state = {books: [], url: ''}
 
-  update = (query, books) => {
-    this.setState({query, books})
+  update = (books, url) => {
+    this.setState({books, url})
   }
 
   render() {
@@ -24,6 +25,11 @@ class App extends React.Component {
         <BookList
           books={this.state.books}
         />
+        
+        {/* <Controls 
+          update={this.update}
+          url={this.state.url}
+        /> */}
       </main>
     )
   }
