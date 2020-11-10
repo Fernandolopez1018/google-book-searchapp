@@ -1,0 +1,39 @@
+div.book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-width: 1px;
+  border-bottom-width: 0;
+  font-size: 18px;
+  padding: 15px 0;
+}
+
+img {
+  min-height: 250px;
+  width: 175px;
+  padding-top: 100px;
+  padding-bottom: 8px;
+  margin: 0px 50px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.book-info {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  margin-bottom: 15px;
+}
+
+.book-description {
+  margin-top: 15px;
+}
+
+label {
+  max-height: 150px;
+  overflow: hidden;
+}

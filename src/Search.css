@@ -1,0 +1,22 @@
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  background-color: rgba(128, 128, 128, 0.582);
+  font-size: 20px;
+  width: 100%;
+}
+
+input {
+  margin: 0 15px;
+  height: 1.5em;
+  border-color: white;
+  border-width: 1.5px;
+  border-radius: 2px;
+  background-color: rgba(241, 241, 112, 0.651);
+}
+
+button {
+  border-color: rgba(0, 0, 255, 0.664);
+  border-radius: 5px;
+}

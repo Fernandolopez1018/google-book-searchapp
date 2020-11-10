@@ -1,0 +1,9 @@
+.booklist {
+  margin-top: 10px;
+  width: 60%;
+  min-width: 700px;
+}
+
+.booklist div:nth-child(10) {
+  border-bottom-width: 1px;
+}
